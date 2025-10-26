@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movuiz - Movie Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div id="lobby-entrance" class="screen">
+        <div class="curtains">
+            <div class="curtain curtain-left"></div>
+            <div class="curtain curtain-right"></div>
+        </div>
+        <div class="lobby-content">
+            <h1 class="logo">MOVUIZ</h1>
+            <p class="tagline">Test Your Movie Knowledge</p>
+            <button id="enter-lobby-btn" class="enter-btn">ENTER CINEMA</button>
+        </div>
+    </div>
+
+    
+    <div id="genre-selection" class="screen hidden">
+        <div class="header">
+            <h1>Choose Your Genre</h1>
+            <div class="back-btn hidden">
+                <button id="back-to-lobby">← Back</button>
+            </div>
+        </div>
+        <div id="genre-grid" class="genre-grid">
+            
+        </div>
+    </div>
+
+    
+    <div id="movie-selection" class="screen hidden">
+        <div class="header">
+            <h1 id="current-genre-title">Genre</h1>
+            <div class="back-btn">
+                <button id="back-to-genres">← Back to Genres</button>
+            </div>
+        </div>
+        <div id="movie-grid" class="movie-grid">
+            
+        </div>
+    </div>
+
+    
+    <div id="quiz-screen" class="screen hidden">
+        <div class="quiz-header">
+            <div class="movie-info">
+                <h2 id="quiz-movie-title">Movie Title</h2>
+                <p id="quiz-movie-year">Year</p>
+            </div>
+            <div class="score-panel">
+                <div class="score-item">
+                    <span class="label">Score:</span>
+                    <span id="current-score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Lives:</span>
+                    <span id="lives-display">❤️❤️❤️</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Streak:</span>
+                    <span id="streak-display">0x</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-content">
+            <div id="countdown" class="countdown hidden">
+                <div class="countdown-number" id="countdown-number">3</div>
+            </div>
+
+            <div id="question-container" class="question-container">
+                <div class="timer-bar">
+                    <div id="timer-fill" class="timer-fill"></div>
+                    <span id="timer-text">15s</span>
+                </div>
+
+                <div id="question-text" class="question-text">
+                    Question will appear here
+                </div>
+
+                <div id="answer-options" class="answer-options">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-footer">
+            <div class="question-progress">
+                Question <span id="current-question-num">1</span> of <span id="total-questions">5</span>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="results-screen" class="screen hidden">
+        <div class="results-content">
+            <h1>Quiz Complete!</h1>
+            <div class="results-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Final Score:</span>
+                    <span id="final-score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Percentage Correct:</span>
+                    <span id="percentage-correct" class="stat-value">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Average Time:</span>
+                    <span id="avg-time" class="stat-value">0s</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Lives Remaining:</span>
+                    <span id="remaining-lives" class="stat-value">0</span>
+                </div>
+            </div>
+            <div class="results-actions">
+                <button id="back-to-movies-btn">Back to Movies</button>
+                <button id="view-collection-btn">View Collection</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="game-over-screen" class="screen hidden">
+        <div class="game-over-content">
+            <h1>Game Over!</h1>
+            <p>You ran out of lives</p>
+            <div class="game-over-stats">
+                <p>You answered <span id="completed-questions">0</span> questions correctly</p>
+                <p>Final Score: <span id="game-over-score">0</span></p>
+            </div>
+            <div class="game-over-actions">
+                <button id="retry-btn">Retry Movie</button>
+                <button id="return-to-movies-btn">Return to Movies</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="collection-screen" class="screen hidden">
+        <div class="header">
+            <h1>Your Collection</h1>
+            <div class="back-btn">
+                <button id="back-from-collection">← Back</button>
+            </div>
+        </div>
+        <div id="collection-content">
+            <div id="collection-stats" class="collection-stats">
+                <p>Movies Completed: <span id="movies-completed">0</span></p>
+                <p>Average Score: <span id="avg-collection-score">0</span></p>
+            </div>
+            <div id="collection-grid">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
