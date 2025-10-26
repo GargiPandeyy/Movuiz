@@ -277,12 +277,28 @@ function startQuestion() {
 
 function timeUp() {
 
-    currentQuestion++;
-    if (currentQuestion < currentMovie.questions.length) {
-        setTimeout(() => loadQuestion(), 1000);
-    } else {
-        endQuiz();
+    console.log('Time ran out for question', currentQuestion + 1);
+    lives--;
+    questionTimes.push(15 - currentQuestion);
+    
+    if (lives <= 0) {
+        console.log('No lives left, ending quiz');
+        setTimeout(() => gameOver(), 1000);
+        return;
     }
+    
+    updateScorePanel();
+    console.log('Lives remaining:', lives);
+    
+
+    setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < currentMovie.questions.length) {
+            loadQuestion();
+        } else {
+            endQuiz();
+        }
+    }, 1000);
 }
 
 
@@ -333,11 +349,14 @@ function selectAnswer(selectedIndex) {
         }
         
         setTimeout(() => {
-            currentQuestion++;
-            if (currentQuestion < currentMovie.questions.length) {
-                loadQuestion();
-            } else {
-                endQuiz();
+            if (lives > 0) {
+                currentQuestion++;
+                if (currentQuestion < currentMovie.questions.length) {
+                    loadQuestion();
+                } else {
+                    console.log('All questions answered, ending quiz');
+                    endQuiz();
+                }
             }
         }, 1500);
     }, 1000);
