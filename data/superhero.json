@@ -20,16 +20,16 @@
           "id": 2,
           "text": "What was the Joker's main motivation in the movie?",
           "type": "plot",
-          "options": ["Money", "Creating chaos", "Becoming the boss of Gotham", "Revenge for his parents"],
-          "correct": 1,
+          "options": ["Money", "Becoming the boss of Gotham", "Creating chaos", "Revenge for his parents"],
+          "correct": 2,
           "explanation": "The Joker's main motivation was creating chaos and anarchy in Gotham, as he believed people only act morally when it suits them."
         },
         {
           "id": 3,
           "text": "What happened to Rachel Dawes at the end?",
           "type": "plot",
-          "options": ["She married Harvey Dent", "She died in an explosion", "She became a villain", "She left Gotham"],
-          "correct": 1,
+          "options": ["She became a villain", "She married Harvey Dent", "She died in an explosion", "She left Gotham"],
+          "correct": 2,
           "explanation": "Rachel Dawes died in the explosion planned by the Joker, which led Harvey Dent to become Two-Face."
         },
         {
@@ -44,8 +44,8 @@
           "id": 5,
           "text": "What was Harvey Dent's tragic transformation?",
           "type": "character",
-          "options": ["He became a killer", "His face was disfigured in fire", "He lost his memory", "He was brainwashed"],
-          "correct": 1,
+          "options": ["He lost his memory", "He was brainwashed", "His face was disfigured in fire", "He became a killer"],
+          "correct": 2,
           "explanation": "Harvey Dent had half of his face burned by the explosion that killed Rachel, transforming him into the villain Two-Face."
         }
       ]
@@ -89,7 +89,7 @@
         },
         {
           "id": 5,
-          "text": "What year did Avengers: Endgame take place?",
+          "text": "What year did Avengers: Endgame take place in the movie(not the release time)?",
           "type": "trivia",
           "options": ["2023", "2019", "2018", "2020"],
           "correct": 0,
