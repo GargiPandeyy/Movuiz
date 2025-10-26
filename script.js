@@ -320,9 +320,16 @@ function updateScorePanel() {
 
 
 function endQuiz() {
+    clearInterval(timerInterval);
     document.getElementById('quiz-screen').classList.add('hidden');
     
-    const percentage = (currentQuestion / currentMovie.questions.length) * 100;
+    const percentage = Math.round((currentQuestion / currentMovie.questions.length) * 100);
+    
+
+    completedMovies[`${currentGenre}_${currentMovie.id}`] = {
+        score: score,
+        percentage: percentage
+    };
     
     if (percentage >= 50) {
 
@@ -331,15 +338,42 @@ function endQuiz() {
         }
         
 
-        completedMovies[`${currentGenre}_${currentMovie.id}`] = {
-            score: score,
-            percentage: percentage
-        };
+        checkAndUnlockNextGenre();
         
         saveGameState();
         showResults();
     } else {
         gameOver();
+    }
+}
+
+
+function checkAndUnlockNextGenre() {
+    const genre = genreData[currentGenre];
+    let allCompleted = true;
+    
+    for (let movie of genre.movies) {
+        const key = `${currentGenre}_${movie.id}`;
+        if (!completedMovies[key] || completedMovies[key].percentage < 50) {
+            allCompleted = false;
+            break;
+        }
+    }
+    
+    if (allCompleted) {
+
+        const genreOrder = ['superhero', 'romance', 'thriller', 'fantasy', 'animation'];
+        const currentIndex = genreOrder.indexOf(currentGenre);
+        
+        if (currentIndex < genreOrder.length - 1) {
+            const nextGenre = genreOrder[currentIndex + 1];
+            if (!unlockedGenres.includes(nextGenre)) {
+                unlockedGenres.push(nextGenre);
+                if (!unlockedMovies[nextGenre]) {
+                    unlockedMovies[nextGenre] = [1];
+                }
+            }
+        }
     }
 }
 
