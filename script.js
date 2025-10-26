@@ -221,39 +221,18 @@ function showCountdown() {
     const countdownNumber = document.getElementById('countdown-number');
     countdown.classList.remove('hidden');
     
-    let num = 3;
-    countdownNumber.textContent = num;
-    
-    const countdownInterval = setInterval(() => {
-        num--;
-        if (num > 0) {
-            countdownNumber.textContent = num;
-        } else {
-            clearInterval(countdownInterval);
-            countdown.classList.add('hidden');
-            startQuestion();
-        }
-    }, 800);
-}
-
-
-function startQuestion() {
 
     const maxTime = Math.max(10, 15 - currentQuestion);
     timer = maxTime;
     console.log('Starting question', currentQuestion + 1, 'with', maxTime, 'seconds');
     
+
     const startInterval = Date.now();
     
+    let num = 3;
+    countdownNumber.textContent = num;
+    
 
-    document.getElementById('timer-fill').style.transition = 'none';
-    document.getElementById('timer-fill').style.width = '100%';
-    
-    setTimeout(() => {
-        document.getElementById('timer-fill').style.transition = `width ${maxTime}s linear`;
-        document.getElementById('timer-fill').style.width = '0%';
-    }, 50);
-    
     timerInterval = setInterval(() => {
         const elapsed = Math.floor((Date.now() - startInterval) / 1000);
         const remaining = Math.max(0, maxTime - elapsed);
@@ -275,10 +254,40 @@ function startQuestion() {
         
         if (remaining === 0) {
             clearInterval(timerInterval);
+            timerInterval = null;
             timeUp();
         }
     }, 100);
+    
+    const countdownInterval = setInterval(() => {
+        num--;
+        if (num > 0) {
+            countdownNumber.textContent = num;
+        } else {
+            clearInterval(countdownInterval);
+            countdown.classList.add('hidden');
+
+            startQuestionTimer();
+        }
+    }, 800);
 }
+
+
+function startQuestionTimer() {
+    const maxTime = Math.max(10, 15 - currentQuestion);
+    
+    const startInterval = Date.now();
+    
+
+    document.getElementById('timer-fill').style.transition = 'none';
+    document.getElementById('timer-fill').style.width = '100%';
+    
+    setTimeout(() => {
+        document.getElementById('timer-fill').style.transition = `width ${maxTime}s linear`;
+        document.getElementById('timer-fill').style.width = '0%';
+    }, 50);
+}
+
 
 
 function timeUp() {
