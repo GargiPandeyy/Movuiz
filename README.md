@@ -1,31 +1,27 @@
-# Movuiz
+# Movuiz 🎬
 
-A fun and challenging movie quiz game! Test your knowledge of your favorite films across 5 different genres.
+A movie quiz game I made! Test your knowledge and see if you can beat all the genres.
 
-## How to Play
+## How It Works
 
-1. Select a genre (Superhero, Romance, Thriller, Fantasy, or Animation)
-2. Choose a movie from that genre
-3. Answer 5 questions about the movie
-4. Get correct answers to unlock the next movie
-5. Complete all movies in a genre to unlock the next genre!
+Pick a genre, choose a movie, and answer 5 questions about it. Get at least 50% right to unlock the next movie. Complete all 3 movies in a genre to unlock the next genre!
 
-## Scoring System
+## Scoring
 
-- **Points**: Earn 10 base points per correct answer
-- **Time Bonus**: Answer faster to earn bonus points
-- **Streak Multiplier**: Consecutive correct answers multiply your score
-- **Lives**: You have 3 lives - lose them all and the quiz ends
+- **Base points**: 10 per correct answer
+- **Time bonus**: Answer faster for extra points
+- **Streak multiplier**: Get multiple right in a row for bigger scores
+- **Lives**: You have 3 hearts - lose them all and it's game over
 
-## Difficulty
+## It Gets Harder
 
-- Questions get harder as you progress
-- Timer decreases each question (15s → 14s → 13s...)
-- More answer choices appear (4 → 5 → 6 options)
+- More wrong answers to choose from (4 → 5 → 6 options)
+- Timer gets shorter each question
+- Questions get progressively more difficult
 
 ## Features
 
-- Progressive unlocking (50% score needed to unlock next movie)
-- Movie collection tracking
-- Theater lobby aesthetic
-- Detailed results and statistics
+- Theater curtain opening animation
+- Keyboard shortcuts (press 1-6 to answer)
+- Progress tracking with localStorage
+- Perfect score celebration screen

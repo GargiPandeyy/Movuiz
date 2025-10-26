@@ -16,19 +16,16 @@ let unlockedMovies = { superhero: [1] };
 let completedMovies = {};
 let questionTimes = [];
 
+console.log('Movuiz starting...');
+
 
 async function loadGenreData() {
     try {
-        const genreKeys = ['superhero', 'romance', 'thriller', 'fantasy', 'animation'];
-        
-        for (const key of genreKeys) {
-            try {
-                genreData[key] = await fetch(`data/${key}.json`).then(r => r.json());
-            } catch (err) {
-                console.warn(`Failed to load ${key}:`, err);
-            }
-        }
-        
+        genreData.superhero = await fetch('data/superhero.json').then(r => r.json());
+        genreData.romance = await fetch('data/romance.json').then(r => r.json());
+        genreData.thriller = await fetch('data/thriller.json').then(r => r.json());
+        genreData.fantasy = await fetch('data/fantasy.json').then(r => r.json());
+        genreData.animation = await fetch('data/animation.json').then(r => r.json());
         loadGameState();
         initLobbyEntrance();
     } catch (error) {
@@ -61,8 +58,7 @@ function showGenreSelection() {
     const genreGrid = document.getElementById('genre-grid');
     genreGrid.innerHTML = '';
 
-
-    const genres = Object.keys(genreData);
+    const genres = ['superhero', 'romance', 'thriller', 'fantasy', 'animation'];
     
     genres.forEach(genreKey => {
         const genre = genreData[genreKey];
@@ -234,7 +230,35 @@ function loadQuestion() {
     });
 
 
+    document.addEventListener('keydown', handleKeyPress);
+
+
     showCountdown();
+}
+
+
+function handleKeyPress(event) {
+
+    if (document.getElementById('quiz-screen').classList.contains('hidden')) return;
+    
+    const question = currentMovie.questions[currentQuestion];
+    if (!question) return;
+    
+
+    let numOptions = 4;
+    if (currentQuestion >= 2 && currentQuestion < 4) numOptions = 5;
+    if (currentQuestion >= 4) numOptions = 6;
+    
+    const key = event.key;
+
+    if (key >= '1' && key <= '6') {
+        const answerIndex = parseInt(key) - 1;
+        if (answerIndex < numOptions && !timeUpCalled) {
+            event.preventDefault();
+            console.log('Keyboard answer:', answerIndex + 1);
+            selectAnswer(answerIndex);
+        }
+    }
 }
 
 
