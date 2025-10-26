@@ -206,27 +206,38 @@ function showCountdown() {
 
 
 function startQuestion() {
-    const startTime = Date.now();
     const maxTime = 15 - currentQuestion;
     timer = maxTime;
     
-    document.getElementById('timer-fill').style.transition = `width ${maxTime}s linear`;
+    const startInterval = Date.now();
+    
+
+    document.getElementById('timer-fill').style.transition = 'none';
     document.getElementById('timer-fill').style.width = '100%';
     
-    const startInterval = Date.now();
+    setTimeout(() => {
+        document.getElementById('timer-fill').style.transition = `width ${maxTime}s linear`;
+        document.getElementById('timer-fill').style.width = '0%';
+    }, 50);
     
     timerInterval = setInterval(() => {
         const elapsed = Math.floor((Date.now() - startInterval) / 1000);
         const remaining = Math.max(0, maxTime - elapsed);
         
         document.getElementById('timer-text').textContent = `${remaining}s`;
-        document.getElementById('timer-fill').style.width = `${(remaining / maxTime) * 100}%`;
         
 
-        let color = '#00ff00';
-        if (remaining < maxTime * 0.5) color = '#ffff00';
-        if (remaining < maxTime * 0.2) color = '#ff0000';
-        document.getElementById('timer-fill').style.background = `linear-gradient(90deg, ${color}, #ff0000)`;
+        let color1 = '#00ff00';
+        let color2 = '#00ff00';
+        if (remaining < maxTime * 0.5) {
+            color1 = '#ffff00';
+            color2 = '#ff0000';
+        }
+        if (remaining < maxTime * 0.2) {
+            color1 = '#ff0000';
+            color2 = '#8b0000';
+        }
+        document.getElementById('timer-fill').style.background = `linear-gradient(90deg, ${color1}, ${color2})`;
         
         if (remaining === 0) {
             clearInterval(timerInterval);
