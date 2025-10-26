@@ -9,6 +9,7 @@ let streak = 0;
 let timer = 15;
 let timerInterval = null;
 let questionStartTime = null;
+let timeUpCalled = false;
 let genreData = {};
 let unlockedGenres = ['superhero'];
 let unlockedMovies = { superhero: [1] };
@@ -181,6 +182,9 @@ function loadQuestion() {
     }
     
 
+    timeUpCalled = false;
+    
+
     questionStartTime = Date.now();
 
     updateScorePanel();
@@ -279,6 +283,13 @@ function startQuestion() {
 
 function timeUp() {
 
+    if (timeUpCalled) {
+        console.log('TimeUp already called, ignoring');
+        return;
+    }
+    timeUpCalled = true;
+    
+
     if (timerInterval) {
         clearInterval(timerInterval);
         timerInterval = null;
@@ -311,10 +322,19 @@ function timeUp() {
 
 
 function selectAnswer(selectedIndex) {
+
+    if (timeUpCalled) {
+        console.log('Answer already processed, ignoring click');
+        return;
+    }
+    
     if (timerInterval) {
         clearInterval(timerInterval);
         timerInterval = null;
     }
+    
+
+    timeUpCalled = true;
     
 
     if (questionStartTime) {
