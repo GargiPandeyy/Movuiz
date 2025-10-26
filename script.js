@@ -162,7 +162,16 @@ function showMovies(genreKey) {
 
 
 function startQuiz(genreKey, movie) {
-    currentMovie = movie;
+
+    const shuffledMovie = JSON.parse(JSON.stringify(movie));
+    
+
+    for (let i = shuffledMovie.questions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledMovie.questions[i], shuffledMovie.questions[j]] = [shuffledMovie.questions[j], shuffledMovie.questions[i]];
+    }
+    
+    currentMovie = shuffledMovie;
     currentQuestion = 0;
     correctAnswers = 0;
     score = 0;
