@@ -111,21 +111,31 @@ function showMovies(genreKey) {
 
         const emoji = movie.id === 1 ? '🎬' : movie.id === 2 ? '🎭' : '🎪';
         
-        card.innerHTML = `
-            <div class="movie-poster">${emoji}</div>
-            <div class="movie-info">
-                <h3 class="movie-title">${movie.name}</h3>
-                <p class="movie-year">${movie.year}</p>
-                ${isCompleted ? `
+        if (isCompleted) {
+            card.innerHTML = `
+                <div class="movie-poster">${emoji}</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">${movie.name}</h3>
+                    <p class="movie-year">${movie.year}</p>
                     <div class="completion-badge">⭐</div>
                     <div class="score-display">${completedMovies[`${genreKey}_${movie.id}`].score}</div>
-                ` : ''}
-            </div>
-        `;
+                </div>
+            `;
+        } else {
+            card.innerHTML = `
+                <div class="movie-poster">${emoji}</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">${movie.name}</h3>
+                    <p class="movie-year">${movie.year}</p>
+                </div>
+            `;
+        }
         
         movieGrid.appendChild(card);
     });
 
+    const backBtn = document.getElementById('back-to-genres');
+    backBtn.replaceWith(backBtn.cloneNode(true));
     document.getElementById('back-to-genres').addEventListener('click', showGenreSelection);
 }
 
