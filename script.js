@@ -19,11 +19,16 @@ let questionTimes = [];
 
 async function loadGenreData() {
     try {
-        genreData.superhero = await fetch('data/superhero.json').then(r => r.json());
-        genreData.romance = await fetch('data/romance.json').then(r => r.json());
-        genreData.thriller = await fetch('data/thriller.json').then(r => r.json());
-        genreData.fantasy = await fetch('data/fantasy.json').then(r => r.json());
-        genreData.animation = await fetch('data/animation.json').then(r => r.json());
+        const genreKeys = ['superhero', 'romance', 'thriller', 'fantasy', 'animation'];
+        
+        for (const key of genreKeys) {
+            try {
+                genreData[key] = await fetch(`data/${key}.json`).then(r => r.json());
+            } catch (err) {
+                console.warn(`Failed to load ${key}:`, err);
+            }
+        }
+        
         loadGameState();
         initLobbyEntrance();
     } catch (error) {
@@ -56,7 +61,8 @@ function showGenreSelection() {
     const genreGrid = document.getElementById('genre-grid');
     genreGrid.innerHTML = '';
 
-    const genres = ['superhero', 'romance', 'thriller', 'fantasy', 'animation'];
+
+    const genres = Object.keys(genreData);
     
     genres.forEach(genreKey => {
         const genre = genreData[genreKey];
