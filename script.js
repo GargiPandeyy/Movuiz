@@ -100,7 +100,14 @@ function showMovies(genreKey) {
     currentGenre = genreKey;
     const genre = genreData[genreKey];
     
+
     document.getElementById('genre-selection').classList.add('hidden');
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('results-screen').classList.add('hidden');
+    document.getElementById('game-over-screen').classList.add('hidden');
+    document.getElementById('collection-screen').classList.add('hidden');
+    document.getElementById('lobby-entrance').classList.add('hidden');
+    
     document.getElementById('movie-selection').classList.remove('hidden');
     document.getElementById('current-genre-title').textContent = genre.name;
     
