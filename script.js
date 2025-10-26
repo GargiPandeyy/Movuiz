@@ -77,7 +77,10 @@ function showGenreSelection() {
         genreGrid.appendChild(card);
     });
 
-    document.getElementById('back-to-lobby').addEventListener('click', () => {
+    const backToLobbyBtn = document.getElementById('back-to-lobby');
+    backToLobbyBtn.replaceWith(backToLobbyBtn.cloneNode(true));
+    document.getElementById('back-to-lobby').addEventListener('click', function() {
+        console.log('Back to lobby clicked');
         document.getElementById('genre-selection').classList.add('hidden');
         document.getElementById('lobby-entrance').classList.remove('hidden');
         const curtains = document.querySelector('.curtains');
@@ -137,7 +140,10 @@ function showMovies(genreKey) {
 
     const backBtn = document.getElementById('back-to-genres');
     backBtn.replaceWith(backBtn.cloneNode(true));
-    document.getElementById('back-to-genres').addEventListener('click', showGenreSelection);
+    document.getElementById('back-to-genres').addEventListener('click', function() {
+        console.log('Back to genres clicked');
+        showGenreSelection();
+    });
 }
 
 
@@ -411,8 +417,72 @@ function showResults() {
     const backBtn = document.getElementById('back-to-movies-btn');
     backBtn.replaceWith(backBtn.cloneNode(true));
     document.getElementById('back-to-movies-btn').addEventListener('click', () => {
+        console.log('Back to movies clicked');
         document.getElementById('results-screen').classList.add('hidden');
         showMovies(currentGenre);
+    });
+    
+    const collectionBtn = document.getElementById('view-collection-btn');
+    if (collectionBtn) {
+        collectionBtn.replaceWith(collectionBtn.cloneNode(true));
+        document.getElementById('view-collection-btn').addEventListener('click', () => {
+            console.log('View collection clicked');
+            showCollection();
+        });
+    }
+}
+
+
+function showCollection() {
+    document.getElementById('results-screen').classList.add('hidden');
+    document.getElementById('collection-screen').classList.remove('hidden');
+    
+
+    let totalMovies = 0;
+    let totalScore = 0;
+    
+    for (let genreKey in completedMovies) {
+        totalMovies++;
+        totalScore += completedMovies[genreKey].score;
+    }
+    
+    const avgScore = totalMovies > 0 ? Math.round(totalScore / totalMovies) : 0;
+    
+    document.getElementById('movies-completed').textContent = totalMovies;
+    document.getElementById('avg-collection-score').textContent = avgScore;
+    
+
+    const collectionGrid = document.getElementById('collection-grid');
+    collectionGrid.innerHTML = '';
+    
+    for (let genreKey in completedMovies) {
+        const [gen, movieId] = genreKey.split('_');
+        const genre = genreData[gen];
+        if (!genre) continue;
+        
+        const movie = genre.movies.find(m => m.id == movieId);
+        if (!movie) continue;
+        
+        const card = document.createElement('div');
+        card.className = 'movie-card';
+        card.innerHTML = `
+            <div class="movie-poster">🎬</div>
+            <div class="movie-info">
+                <h3 class="movie-title">${movie.name}</h3>
+                <p class="movie-year">${movie.year}</p>
+                <div class="completion-badge">⭐</div>
+                <div class="score-display">${completedMovies[genreKey].score}</div>
+            </div>
+        `;
+        collectionGrid.appendChild(card);
+    }
+    
+    const backFromCollectionBtn = document.getElementById('back-from-collection');
+    backFromCollectionBtn.replaceWith(backFromCollectionBtn.cloneNode(true));
+    document.getElementById('back-from-collection').addEventListener('click', function() {
+        console.log('Back from collection clicked');
+        document.getElementById('collection-screen').classList.add('hidden');
+        showGenreSelection();
     });
 }
 
