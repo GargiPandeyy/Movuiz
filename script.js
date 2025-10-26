@@ -234,8 +234,10 @@ function showCountdown() {
 
 
 function startQuestion() {
-    const maxTime = 15 - currentQuestion;
+
+    const maxTime = Math.max(10, 15 - currentQuestion);
     timer = maxTime;
+    console.log('Starting question', currentQuestion + 1, 'with', maxTime, 'seconds');
     
     const startInterval = Date.now();
     
@@ -342,7 +344,8 @@ function selectAnswer(selectedIndex) {
             correctAnswers++;
 
             const basePoints = 10;
-            const timeBonus = Math.max(0, (timer / (15 - currentQuestion) || 15)) * 2;
+            const maxTimeForQuestion = Math.max(10, 15 - currentQuestion);
+            const timeBonus = Math.max(0, (timer / maxTimeForQuestion) * 5);
             const totalPoints = (basePoints + timeBonus) * (1 + streak * 0.3);
             score += Math.floor(totalPoints);
             updateScorePanel();
