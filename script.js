@@ -441,33 +441,54 @@ function loadGameState() {
 }
 
 
-loadGenreData();
-
-
 let dontShowTutorial = localStorage.getItem('dontShowTutorial') === 'true';
 
 function showTutorial() {
-    document.getElementById('tutorial-modal').classList.remove('hidden');
+    const modal = document.getElementById('tutorial-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+    }
 }
 
 function hideTutorial() {
-    document.getElementById('tutorial-modal').classList.add('hidden');
-}
-
-document.getElementById('close-tutorial').addEventListener('click', hideTutorial);
-document.getElementById('got-it-btn').addEventListener('click', () => {
-    const checkbox = document.getElementById('dont-show-again');
-    if (checkbox.checked) {
-        localStorage.setItem('dontShowTutorial', 'true');
+    const modal = document.getElementById('tutorial-modal');
+    if (modal) {
+        modal.classList.add('hidden');
     }
-    hideTutorial();
-});
-
-document.getElementById('help-btn').addEventListener('click', showTutorial);
-
-
-if (!dontShowTutorial) {
-    setTimeout(() => {
-        showTutorial();
-    }, 500);
 }
+
+
+loadGenreData();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const closeBtn = document.getElementById('close-tutorial');
+    const gotItBtn = document.getElementById('got-it-btn');
+    const helpBtn = document.getElementById('help-btn');
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hideTutorial);
+    }
+    
+    if (gotItBtn) {
+        gotItBtn.addEventListener('click', () => {
+            const checkbox = document.getElementById('dont-show-again');
+            if (checkbox && checkbox.checked) {
+                localStorage.setItem('dontShowTutorial', 'true');
+                dontShowTutorial = true;
+            }
+            hideTutorial();
+        });
+    }
+    
+    if (helpBtn) {
+        helpBtn.addEventListener('click', showTutorial);
+    }
+    
+
+    if (!dontShowTutorial) {
+        setTimeout(() => {
+            showTutorial();
+        }, 1000);
+    }
+});
