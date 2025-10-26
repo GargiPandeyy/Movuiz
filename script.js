@@ -277,6 +277,12 @@ function startQuestion() {
 
 function timeUp() {
 
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+    
+
     console.log('Time ran out for question', currentQuestion + 1);
     lives--;
     questionTimes.push(15 - currentQuestion);
@@ -303,7 +309,10 @@ function timeUp() {
 
 
 function selectAnswer(selectedIndex) {
-    if (timerInterval) clearInterval(timerInterval);
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
     
 
     if (questionStartTime) {
