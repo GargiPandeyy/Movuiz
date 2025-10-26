@@ -2,6 +2,7 @@
 let currentGenre = '';
 let currentMovie = null;
 let currentQuestion = 0;
+let correctAnswers = 0;
 let score = 0;
 let lives = 3;
 let streak = 0;
@@ -143,6 +144,7 @@ function showMovies(genreKey) {
 function startQuiz(genreKey, movie) {
     currentMovie = movie;
     currentQuestion = 0;
+    correctAnswers = 0;
     score = 0;
     lives = 3;
     streak = 0;
@@ -289,12 +291,14 @@ function selectAnswer(selectedIndex) {
     setTimeout(() => {
         if (isCorrect) {
             streak++;
+            correctAnswers++;
 
             const basePoints = 10;
-            const timeBonus = (timer / 15) * 5;
-            const totalPoints = (basePoints + timeBonus) * (1 + streak * 0.5);
+            const timeBonus = Math.max(0, (timer / (15 - currentQuestion) || 15)) * 2;
+            const totalPoints = (basePoints + timeBonus) * (1 + streak * 0.3);
             score += Math.floor(totalPoints);
             updateScorePanel();
+            console.log('Score added:', Math.floor(totalPoints), 'Total:', score, 'Correct:', correctAnswers);
         } else {
             streak = 0;
             lives--;
@@ -333,7 +337,10 @@ function endQuiz() {
     clearInterval(timerInterval);
     document.getElementById('quiz-screen').classList.add('hidden');
     
-    const percentage = Math.round((currentQuestion / currentMovie.questions.length) * 100);
+    const totalQuestions = currentMovie.questions.length;
+    const percentage = Math.min(100, Math.round((correctAnswers / totalQuestions) * 100));
+    
+    console.log('Quiz ended. Correct:', correctAnswers, 'Total:', totalQuestions, 'Percentage:', percentage);
     
 
     completedMovies[`${currentGenre}_${currentMovie.id}`] = {
@@ -391,12 +398,18 @@ function checkAndUnlockNextGenre() {
 function showResults() {
     document.getElementById('results-screen').classList.remove('hidden');
     
-    const percentage = Math.round((currentQuestion / currentMovie.questions.length) * 100);
+    const totalQuestions = currentMovie.questions.length;
+    const percentage = Math.min(100, Math.round((correctAnswers / totalQuestions) * 100));
+    
+    console.log('Results - Correct:', correctAnswers, 'Total:', totalQuestions, 'Percentage:', percentage);
+    
     document.getElementById('final-score').textContent = score;
     document.getElementById('percentage-correct').textContent = `${percentage}%`;
     document.getElementById('avg-time').textContent = '12s';
     document.getElementById('remaining-lives').textContent = lives;
     
+    const backBtn = document.getElementById('back-to-movies-btn');
+    backBtn.replaceWith(backBtn.cloneNode(true));
     document.getElementById('back-to-movies-btn').addEventListener('click', () => {
         document.getElementById('results-screen').classList.add('hidden');
         showMovies(currentGenre);
