@@ -44,6 +44,11 @@ function initLobbyEntrance() {
 
 function showGenreSelection() {
     document.getElementById('lobby-entrance').classList.add('hidden');
+    document.getElementById('movie-selection').classList.add('hidden');
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('results-screen').classList.add('hidden');
+    document.getElementById('game-over-screen').classList.add('hidden');
+    document.getElementById('collection-screen').classList.add('hidden');
     document.getElementById('genre-selection').classList.remove('hidden');
     document.getElementById('back-to-lobby').classList.add('hidden');
     const genreGrid = document.getElementById('genre-grid');
