@@ -9,6 +9,63 @@ body {
     background: #0a0a0a;
     color: #e0e0e0;
     overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
+    animation: backgroundShift 20s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes backgroundShift {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 0, 0, 0.03) 2px,
+            rgba(139, 0, 0, 0.03) 4px
+        );
+    animation: filmGrain 8s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes filmGrain {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(4px, 4px);
+    }
 }
 
 .screen {
@@ -145,6 +202,46 @@ body {
     padding: 50px;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.genre-grid::before {
+    content: '🎬';
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.1;
+    animation: float1 15s ease-in-out infinite;
+    top: 10%;
+    left: 10%;
+}
+
+.genre-grid::after {
+    content: '🎭';
+    position: absolute;
+    font-size: 16px;
+    opacity: 0.1;
+    animation: float2 12s ease-in-out infinite;
+    top: 60%;
+    right: 15%;
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(30px, -30px) rotate(180deg);
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(-40px, 20px) rotate(-180deg);
+    }
 }
 
 .genre-card {
@@ -157,6 +254,16 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(139, 0, 0, 0.5);
+    }
 }
 
 .genre-card::before {
@@ -244,6 +351,28 @@ body {
     justify-content: center;
     font-size: 48px;
     color: #ffd700;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-poster::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
 }
 
 .movie-info {
