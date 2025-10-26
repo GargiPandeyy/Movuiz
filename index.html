@@ -161,6 +161,55 @@
         </div>
     </div>
 
+    
+    <div id="tutorial-modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="close-tutorial" class="close-btn">✕</button>
+            <h2>Welcome to Movuiz!</h2>
+            <div class="tutorial-content">
+                <div class="tutorial-section">
+                    <h3>🎯 How to Play</h3>
+                    <ul>
+                        <li>Select a genre and choose a movie</li>
+                        <li>Answer 5 questions correctly to unlock the next movie</li>
+                        <li>You have 3 lives - lose them all and it's game over!</li>
+                        <li>Complete all 3 movies in a genre to unlock the next genre</li>
+                    </ul>
+                </div>
+                <div class="tutorial-section">
+                    <h3>⭐ Scoring System</h3>
+                    <ul>
+                        <li><strong>Points:</strong> 10 base points per correct answer</li>
+                        <li><strong>Time Bonus:</strong> Answer faster to earn more points</li>
+                        <li><strong>Streak Multiplier:</strong> Consecutive correct answers multiply your score!</li>
+                        <li><strong>Requirement:</strong> Need 50% score to unlock next movie</li>
+                    </ul>
+                </div>
+                <div class="tutorial-section">
+                    <h3>📈 Difficulty</h3>
+                    <ul>
+                        <li>Timer decreases: 15s → 14s → 13s... per question</li>
+                        <li>More answer choices: 4 → 5 → 6 options as you progress</li>
+                        <li>Get ready for some intense movie trivia!</li>
+                    </ul>
+                </div>
+                <div class="tutorial-section">
+                    <h3>🎬 Genre Unlock Order</h3>
+                    <p>Superhero → Romance → Thriller → Fantasy → Animation</p>
+                </div>
+            </div>
+            <div class="tutorial-footer">
+                <label>
+                    <input type="checkbox" id="dont-show-again"> Don't show this again
+                </label>
+                <button id="got-it-btn">Got It!</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <button id="help-btn" class="help-btn">?</button>
+
     <script src="script.js"></script>
 </body>
 </html>
