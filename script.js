@@ -442,18 +442,28 @@ function loadGameState() {
 
 
 let dontShowTutorial = localStorage.getItem('dontShowTutorial') === 'true';
+console.log('Tutorial disabled:', dontShowTutorial);
 
 function showTutorial() {
+    console.log('Showing tutorial...');
     const modal = document.getElementById('tutorial-modal');
+    console.log('Modal element:', modal);
     if (modal) {
         modal.classList.remove('hidden');
+        console.log('Tutorial modal shown');
+    } else {
+        console.error('Tutorial modal not found!');
     }
 }
 
 function hideTutorial() {
+    console.log('Hiding tutorial...');
     const modal = document.getElementById('tutorial-modal');
     if (modal) {
         modal.classList.add('hidden');
+        console.log('Tutorial modal hidden');
+    } else {
+        console.error('Tutorial modal not found!');
     }
 }
 
@@ -462,18 +472,32 @@ loadGenreData();
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, setting up tutorial handlers...');
+    
     const closeBtn = document.getElementById('close-tutorial');
     const gotItBtn = document.getElementById('got-it-btn');
     const helpBtn = document.getElementById('help-btn');
     
+    console.log('closeBtn:', closeBtn);
+    console.log('gotItBtn:', gotItBtn);
+    console.log('helpBtn:', helpBtn);
+    
     if (closeBtn) {
-        closeBtn.addEventListener('click', hideTutorial);
+        console.log('Attaching close button handler');
+        closeBtn.addEventListener('click', function() {
+            console.log('Close button clicked');
+            hideTutorial();
+        });
     }
     
     if (gotItBtn) {
-        gotItBtn.addEventListener('click', () => {
+        console.log('Attaching got-it button handler');
+        gotItBtn.addEventListener('click', function() {
+            console.log('Got it button clicked');
             const checkbox = document.getElementById('dont-show-again');
+            console.log('Checkbox:', checkbox);
             if (checkbox && checkbox.checked) {
+                console.log('Saving dont-show setting');
                 localStorage.setItem('dontShowTutorial', 'true');
                 dontShowTutorial = true;
             }
@@ -482,11 +506,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (helpBtn) {
-        helpBtn.addEventListener('click', showTutorial);
+        console.log('Attaching help button handler');
+        helpBtn.addEventListener('click', function() {
+            console.log('Help button clicked');
+            showTutorial();
+        });
     }
     
 
     if (!dontShowTutorial) {
+        console.log('Showing tutorial on first load');
         setTimeout(() => {
             showTutorial();
         }, 1000);
