@@ -8,6 +8,7 @@ let lives = 3;
 let streak = 0;
 let timer = 15;
 let timerInterval = null;
+let questionStartTime = null;
 let genreData = {};
 let unlockedGenres = ['superhero'];
 let unlockedMovies = { superhero: [1] };
@@ -160,6 +161,7 @@ function startQuiz(genreKey, movie) {
     lives = 3;
     streak = 0;
     questionTimes = [];
+    questionStartTime = null;
     
     document.getElementById('movie-selection').classList.add('hidden');
     document.getElementById('quiz-screen').classList.remove('hidden');
@@ -177,6 +179,9 @@ function loadQuestion() {
         endQuiz();
         return;
     }
+    
+
+    questionStartTime = Date.now();
 
     updateScorePanel();
     
@@ -283,6 +288,13 @@ function timeUp() {
 
 function selectAnswer(selectedIndex) {
     if (timerInterval) clearInterval(timerInterval);
+    
+
+    if (questionStartTime) {
+        const timeTaken = (Date.now() - questionStartTime) / 1000;
+        questionTimes.push(timeTaken);
+        console.log('Question', currentQuestion + 1, 'time:', timeTaken + 's');
+    }
     
     const question = currentMovie.questions[currentQuestion];
     const answerOptions = document.querySelectorAll('.answer-option');
@@ -413,10 +425,18 @@ function showResults() {
     const percentage = Math.min(100, Math.round((correctAnswers / totalQuestions) * 100));
     
     console.log('Results - Correct:', correctAnswers, 'Total:', totalQuestions, 'Percentage:', percentage);
+    console.log('Question times:', questionTimes);
+    
+
+    let avgTime = 12;
+    if (questionTimes.length > 0) {
+        const sum = questionTimes.reduce((a, b) => a + b, 0);
+        avgTime = Math.round(sum / questionTimes.length);
+    }
     
     document.getElementById('final-score').textContent = score;
     document.getElementById('percentage-correct').textContent = `${percentage}%`;
-    document.getElementById('avg-time').textContent = '12s';
+    document.getElementById('avg-time').textContent = `${avgTime}s`;
     document.getElementById('remaining-lives').textContent = lives;
     
     const backBtn = document.getElementById('back-to-movies-btn');
@@ -495,7 +515,7 @@ function showCollection() {
 function gameOver() {
     document.getElementById('game-over-screen').classList.remove('hidden');
     
-    document.getElementById('completed-questions').textContent = currentQuestion;
+    document.getElementById('completed-questions').textContent = correctAnswers;
     document.getElementById('game-over-score').textContent = score;
     
     document.getElementById('retry-btn').addEventListener('click', () => {
