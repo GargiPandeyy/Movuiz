@@ -1,0 +1,148 @@
+{
+  "genre": "romance",
+  "name": "Romance",
+  "description": "Fall in love with these romantic classics",
+  "movies": [
+    {
+      "id": 1,
+      "name": "Titanic",
+      "year": 1997,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Leonardo DiCaprio in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Leonardo DiCaprio played Jack Dawson, the penniless artist who falls in love with Rose aboard the Titanic."
+        },
+        {
+          "id": 2,
+          "text": "What happened to Jack at the end of the movie?",
+          "type": "plot",
+          "options": ["He survived", "He froze to death in the water", "He was arrested", "He was rescued"],
+          "correct": 1,
+          "explanation": "Jack froze to death in the icy Atlantic Ocean, sacrificing his life to save Rose, who was the one who had to let him go."
+        },
+        {
+          "id": 3,
+          "text": "What was the Heart of the Ocean?",
+          "type": "plot",
+          "options": ["A famous diamond necklace", "A song", "The name of the ship", "A restaurant"],
+          "correct": 0,
+          "explanation": "The Heart of the Ocean was a rare blue diamond necklace given to Rose by her fiance Cal, which became one of the most valuable jewels ever lost at sea."
+        },
+        {
+          "id": 4,
+          "text": "Where did the real Titanic sink?",
+          "type": "trivia",
+          "options": ["Pacific Ocean", "Atlantic Ocean near Newfoundland", "Arctic Ocean", "Mediterranean Sea"],
+          "correct": 1,
+          "explanation": "The real Titanic sank in the North Atlantic Ocean off the coast of Newfoundland on April 15, 1912."
+        },
+        {
+          "id": 5,
+          "text": "What did Rose throw into the ocean at the end?",
+          "type": "plot",
+          "options": ["A ring", "The Heart of the Ocean diamond", "A lock of Jack's hair", "Her wedding photo"],
+          "correct": 1,
+          "explanation": "Rose threw the Heart of the Ocean diamond into the ocean, symbolically returning to Jack and the Titanic after keeping it safe for 84 years."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "The Notebook",
+      "year": 2004,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Ryan Gosling in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Ryan Gosling played Noah Calhoun, the romantic lumber worker who falls in love with Allie and writes her 365 letters."
+        },
+        {
+          "id": 2,
+          "text": "What happened to Allie at the end of the movie?",
+          "type": "plot",
+          "options": ["She forgot her family", "She regained her memory briefly", "She left Noah", "She died peacefully"],
+          "correct": 1,
+          "explanation": "Allie regained her memory temporarily after Noah read their story, but she forgot again and became upset, though she recognized Noah."
+        },
+        {
+          "id": 3,
+          "text": "How many letters did Noah write to Allie?",
+          "type": "plot",
+          "options": ["100", "365", "1000", "52"],
+          "correct": 1,
+          "explanation": "Noah wrote Allie 365 letters, one for every day of the year, though her mother hid them from her."
+        },
+        {
+          "id": 4,
+          "text": "What was the house that Noah rebuilt called?",
+          "type": "plot",
+          "options": ["The Windsor Plantation", "The Bailey House", "The Calhoun Manor", "The Plantation House"],
+          "correct": 1,
+          "explanation": "Noah bought and restored the Windsor Plantation, the house Allie had always dreamed of living in."
+        },
+        {
+          "id": 5,
+          "text": "What was Allie's condition in the present day?",
+          "type": "plot",
+          "options": ["She was blind", "She had dementia", "She was paralyzed", "She had amnesia"],
+          "correct": 1,
+          "explanation": "Allie was suffering from dementia and living in a nursing home, where Noah read their story to help her remember."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "La La Land",
+      "year": 2016,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Emma Stone in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "She was only in a cameo", "She directed it"],
+          "correct": 0,
+          "explanation": "Emma Stone played Mia, the aspiring actress who falls in love with Sebastian, and won an Academy Award for Best Actress."
+        },
+        {
+          "id": 2,
+          "text": "What was Sebastian's dream?",
+          "type": "plot",
+          "options": ["To become a famous actor", "To open a jazz club", "To direct movies", "To become a music producer"],
+          "correct": 1,
+          "explanation": "Sebastian's dream was to open his own jazz club and preserve the tradition of pure jazz music."
+        },
+        {
+          "id": 3,
+          "text": "What happened to Mia and Sebastian's relationship?",
+          "type": "plot",
+          "options": ["They got married", "They broke up but met years later", "They stayed together forever", "They never met"],
+          "correct": 1,
+          "explanation": "Mia and Sebastian broke up to pursue their dreams separately, but met again years later when Mia was married with a child."
+        },
+        {
+          "id": 4,
+          "text": "Where is the movie set?",
+          "type": "trivia",
+          "options": ["New York", "Los Angeles", "Chicago", "Las Vegas"],
+          "correct": 1,
+          "explanation": "La La Land is set in Los Angeles, capturing the dreams and struggles of aspiring artists in Hollywood."
+        },
+        {
+          "id": 5,
+          "text": "What was the final fantasy sequence about?",
+          "type": "plot",
+          "options": ["Mia becoming a star", "Sebastian opening his club", "Their alternate life together", "Mia marrying someone else"],
+          "correct": 2,
+          "explanation": "The ending shows an alternate reality where Mia and Sebastian stayed together and lived their perfect life, a poignant 'what if' scenario."
+        }
+      ]
+    }
+  ]
+}

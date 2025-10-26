@@ -1,0 +1,148 @@
+{
+  "genre": "fantasy",
+  "name": "Fantasy",
+  "description": "Enter magical worlds and realms",
+  "movies": [
+    {
+      "id": 1,
+      "name": "The Lord of the Rings: Return of the King",
+      "year": 2003,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Elijah Wood in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Elijah Wood played Frodo Baggins, the hobbit tasked with destroying the One Ring in the fires of Mount Doom."
+        },
+        {
+          "id": 2,
+          "text": "How did Gollum die?",
+          "type": "character",
+          "options": ["Frodo killed him", "He fell into the lava with the Ring", "He was killed by an orc", "He died of old age"],
+          "correct": 1,
+          "explanation": "Gollum fell into the fires of Mount Doom with the Ring, celebrating his 'precious' as he fell, completing Frodo's mission."
+        },
+        {
+          "id": 3,
+          "text": "What happened to Frodo at the end?",
+          "type": "plot",
+          "options": ["He became king", "He stayed in the Shire", "He sailed to the Undying Lands", "He died"],
+          "correct": 2,
+          "explanation": "Frodo sailed to the Undying Lands (Aman) to heal from the psychological damage of bearing the Ring, alongside Bilbo, Gandalf, and Galadriel."
+        },
+        {
+          "id": 4,
+          "text": "Who became king of Gondor?",
+          "type": "character",
+          "options": ["Gandalf", "Aragorn", "Boromir", "Legolas"],
+          "correct": 1,
+          "explanation": "Aragorn, the true heir of Isildur, was crowned King Elessar of Gondor, reuniting the kingdoms of Arnor and Gondor."
+        },
+        {
+          "id": 5,
+          "text": "What was the final battle called?",
+          "type": "plot",
+          "options": ["Battle of Helm's Deep", "Battle of the Five Armies", "Battle of Pelennor Fields", "Battle at the Black Gate"],
+          "correct": 3,
+          "explanation": "The final battle was the Battle at the Black Gate, a diversionary attack to draw Sauron's attention while Frodo destroyed the Ring."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Harry Potter and the Deathly Hallows Part 2",
+      "year": 2011,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Daniel Radcliffe in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Daniel Radcliffe played Harry Potter, the boy who lived, who had to sacrifice himself to destroy Voldemort's Horcrux within him."
+        },
+        {
+          "id": 2,
+          "text": "What were the Deathly Hallows?",
+          "type": "plot",
+          "options": ["Three magical items", "A spell", "A place", "A person"],
+          "correct": 0,
+          "explanation": "The Deathly Hallows were three legendary magical objects: the Elder Wand, the Resurrection Stone, and the Invisibility Cloak."
+        },
+        {
+          "id": 3,
+          "text": "How did Harry destroy the final Horcrux (himself)?",
+          "type": "plot",
+          "options": ["He killed himself", "Voldemort killed him willingly", "He used a spell", "Dumbledore planned his sacrifice"],
+          "correct": 1,
+          "explanation": "Harry walked willingly into the Forbidden Forest to let Voldemort kill him, destroying the piece of Voldemort's soul within him."
+        },
+        {
+          "id": 4,
+          "text": "What was Snape's true allegiance?",
+          "type": "character",
+          "options": ["He was always on Voldemort's side", "He was secretly helping Harry", "He was neutral", "He was being mind-controlled"],
+          "correct": 1,
+          "explanation": "Snape was secretly helping Harry all along, following Dumbledore's plan, because he loved Harry's mother Lily."
+        },
+        {
+          "id": 5,
+          "text": "Who actually killed Snape?",
+          "type": "plot",
+          "options": ["Voldemort", "Bellatrix", "Nagini", "Harry"],
+          "correct": 2,
+          "explanation": "Voldemort had Nagini attack and kill Snape, believing Snape was the master of the Elder Wand and that his death would secure its allegiance."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Pan's Labyrinth",
+      "year": 2006,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Ivana Baquero in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "She was only in a cameo", "She directed it"],
+          "correct": 0,
+          "explanation": "Ivana Baquero played Ofelia, the young girl who enters a magical labyrinth and completes tasks to prove she's a princess from another realm."
+        },
+        {
+          "id": 2,
+          "text": "What was the Pale Man?",
+          "type": "character",
+          "options": ["Ofelia's father", "A creature that represents temptation", "The faun's enemy", "A guard"],
+          "correct": 1,
+          "explanation": "The Pale Man represented temptation and disobedience - if Ofelia ate the food in his chamber, she would be consumed by worldly desires."
+        },
+        {
+          "id": 3,
+          "text": "What happened to Ofelia at the end?",
+          "type": "plot",
+          "options": ["She died and became a princess", "She stayed with her mother", "She became immortal", "She woke up from a dream"],
+          "correct": 0,
+          "explanation": "The movie is ambiguous: Ofelia died after her stepfather shot her, but she may have returned to the fairy realm as Princess Moanna."
+        },
+        {
+          "id": 4,
+          "text": "What was the Faun's true nature?",
+          "type": "character",
+          "options": ["Evil", "Trickster who tests Ofelia", "Guardian", "Imaginary"],
+          "correct": 1,
+          "explanation": "The Faun was a trickster figure who tested Ofelia's purity and commitment through dangerous tasks and moral choices."
+        },
+        {
+          "id": 5,
+          "text": "What period was the movie set in?",
+          "type": "trivia",
+          "options": ["The Spanish Civil War", "World War I", "World War II", "The 1950s"],
+          "correct": 0,
+          "explanation": "Pan's Labyrinth is set in 1944, during the Francoist Spain period after the Spanish Civil War, contrasting fantasy with brutal reality."
+        }
+      ]
+    }
+  ]
+}

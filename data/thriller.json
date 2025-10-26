@@ -1,0 +1,148 @@
+{
+  "genre": "thriller",
+  "name": "Thriller",
+  "description": "Unravel the mysteries and suspense",
+  "movies": [
+    {
+      "id": 1,
+      "name": "Gone Girl",
+      "year": 2014,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Ben Affleck in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Ben Affleck played Nick Dunne, the husband who becomes the prime suspect when his wife Amy disappears."
+        },
+        {
+          "id": 2,
+          "text": "What was Amy's real reason for faking her disappearance?",
+          "type": "plot",
+          "options": ["She was kidnapped", "To frame Nick for murder", "To escape her life", "To start a new identity"],
+          "correct": 1,
+          "explanation": "Amy faked her disappearance and framed Nick for her murder as revenge for his infidelity and their failing marriage."
+        },
+        {
+          "id": 3,
+          "text": "What actually happened to Amy?",
+          "type": "plot",
+          "options": ["She was killed", "She faked her disappearance and went into hiding", "She was kidnapped", "She committed suicide"],
+          "correct": 1,
+          "explanation": "Amy orchestrated an elaborate plot, including planting evidence and memories, to frame Nick and ruin his life."
+        },
+        {
+          "id": 4,
+          "text": "What was Desi's fate?",
+          "type": "character",
+          "options": ["He was arrested", "Amy killed him", "He killed Amy", "He helped Amy escape"],
+          "correct": 1,
+          "explanation": "Amy killed Desi to make it look like self-defense, then returned to Nick as the victim who had to kill to escape."
+        },
+        {
+          "id": 5,
+          "text": "What's the ending of the movie?",
+          "type": "plot",
+          "options": ["Amy divorces Nick", "They stay together, trapped in their toxic marriage", "Nick kills Amy", "Amy is arrested"],
+          "correct": 1,
+          "explanation": "Nick and Amy stay together, both trapped by Amy's pregnancy and the knowledge of each other's dark secrets, unable to escape."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Shutter Island",
+      "year": 2010,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Leonardo DiCaprio in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Leonardo DiCaprio played Teddy Daniels, a U.S. Marshal investigating a disappearance at a psychiatric facility on Shutter Island."
+        },
+        {
+          "id": 2,
+          "text": "What was the shocking truth about Teddy?",
+          "type": "plot",
+          "options": ["He was a patient", "He was the murderer", "He was a detective", "He was the warden"],
+          "correct": 0,
+          "explanation": "Teddy was actually Andrew Laeddis, a patient who murdered his wife after she drowned their three children, and the investigation was an experimental therapy."
+        },
+        {
+          "id": 3,
+          "text": "What happened to Rachel Solando?",
+          "type": "plot",
+          "options": ["She escaped", "She never existed", "She was murdered", "She was released"],
+          "correct": 1,
+          "explanation": "Rachel Solando was a fabrication - an anagram of Teddy's wife's name (Rachel = Laeddis). She was actually Teddy himself."
+        },
+        {
+          "id": 4,
+          "text": "What was Teddy's real name?",
+          "type": "character",
+          "options": ["Edward Daniels", "Andrew Laeddis", "Robert Markum", "Chuck Aule"],
+          "correct": 1,
+          "explanation": "Teddy's real name was Andrew Laeddis, and he was a patient who had created the 'Teddy Daniels' persona after his traumatic past."
+        },
+        {
+          "id": 5,
+          "text": "What did Teddy choose at the end?",
+          "type": "plot",
+          "options": ["He escaped the island", "He accepted his truth and chose the lobotomy", "He killed the doctor", "He returned home"],
+          "correct": 1,
+          "explanation": "Teddy chose to have a lobotomy rather than live with the painful truth that he had murdered his wife after she killed their children."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Prisoners",
+      "year": 2013,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Hugh Jackman in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Hugh Jackman played Keller Dover, a father who takes desperate measures when his daughter goes missing."
+        },
+        {
+          "id": 2,
+          "text": "What happened to the two girls?",
+          "type": "plot",
+          "options": ["They were murdered", "They were kidnapped and held prisoner in a basement", "They ran away", "They were never really missing"],
+          "correct": 1,
+          "explanation": "The girls were kidnapped by Holly Jones and her boyfriend and held captive in an underground cell beneath a house."
+        },
+        {
+          "id": 3,
+          "text": "What was Holly Jones's motive?",
+          "type": "character",
+          "options": ["Ransom money", "Revenge on Dover", "She was saving them", "She was paid by someone"],
+          "correct": 1,
+          "explanation": "Holly Jones was motivated by revenge - Dover (then named Warren) had led a military raid that killed her nephew when he was just 6 years old."
+        },
+        {
+          "id": 4,
+          "text": "What did Keller do to Alex Jones?",
+          "type": "plot",
+          "options": ["He questioned him", "He tortured him over several days", "He killed him", "He arrested him"],
+          "correct": 1,
+          "explanation": "Keller kidnapped and tortured Alex for several days, despite Alex being mentally impaired and innocent of the actual crime."
+        },
+        {
+          "id": 5,
+          "text": "How did the movie end?",
+          "type": "plot",
+          "options": ["Both girls were found alive", "Both girls were dead", "Only one girl was found", "Keller died from his injuries"],
+          "correct": 0,
+          "explanation": "Both girls were ultimately found alive in the underground prison, and Detective Loki found Keller in the pit where he'd been trapped."
+        }
+      ]
+    }
+  ]
+}

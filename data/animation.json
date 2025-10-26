@@ -1,0 +1,148 @@
+{
+  "genre": "animation",
+  "name": "Animation",
+  "description": "Journey through animated adventures",
+  "movies": [
+    {
+      "id": 1,
+      "name": "Toy Story",
+      "year": 1995,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Tom Hanks in this movie?",
+          "type": "character",
+          "options": ["Yes (voice)", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Tom Hanks provided the voice for Woody, the pull-string cowboy doll who is Andy's favorite toy."
+        },
+        {
+          "id": 2,
+          "text": "What was Buzz Lightyear's main problem?",
+          "type": "character",
+          "options": ["He was broken", "He thought he was a real space ranger", "He couldn't talk", "He was evil"],
+          "correct": 1,
+          "explanation": "Buzz Lightyear didn't realize he was a toy - he genuinely believed he was a real space ranger from Star Command."
+        },
+        {
+          "id": 3,
+          "text": "What happened when Sid's dog Scud attacked?",
+          "type": "plot",
+          "options": ["Sid was killed", "The toys scared Sid away", "Woody and Buzz fell out the window", "Woody escaped"],
+          "correct": 2,
+          "explanation": "Scud's attack caused Woody and Buzz to fall out of the window into Sid's yard, beginning their adventure."
+        },
+        {
+          "id": 4,
+          "text": "How did Woody and Buzz escape Sid's room?",
+          "type": "plot",
+          "options": ["They fought their way out", "They scared Sid so much he left", "They dug a tunnel", "Sid let them go"],
+          "correct": 1,
+          "explanation": "The toys came to life and scared Sid so badly that he ran away and never returned to terrorize toys again."
+        },
+        {
+          "id": 5,
+          "text": "What did Buzz finally realize?",
+          "type": "plot",
+          "options": ["He was a toy", "He was a real space ranger", "He was broken", "He had to leave Andy"],
+          "correct": 0,
+          "explanation": "When Buzz tried to fly and fell with style instead, he finally realized he was just a toy, not a real space ranger."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Frozen",
+      "year": 2013,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Idina Menzel in this movie?",
+          "type": "character",
+          "options": ["Yes (voice)", "No", "She was only in a cameo", "She directed it"],
+          "correct": 0,
+          "explanation": "Idina Menzel provided the voice for Elsa, the Snow Queen with ice powers who sang 'Let It Go'."
+        },
+        {
+          "id": 2,
+          "text": "What was Elsa's power actually?",
+          "type": "character",
+          "options": ["She could control ice", "She could freeze people", "She could create life", "She could see the future"],
+          "correct": 2,
+          "explanation": "Elsa's real power was creating life - she created Olaf and Marshmallow, living beings made of snow and ice."
+        },
+        {
+          "id": 3,
+          "text": "What happened to Anna at the end?",
+          "type": "plot",
+          "options": ["She died", "She was saved by an act of true love", "She became queen", "She froze to death"],
+          "correct": 1,
+          "explanation": "Anna was saved by an act of true love - sacrificing herself for Elsa rather than taking care of herself first."
+        },
+        {
+          "id": 4,
+          "text": "What was the real act of true love?",
+          "type": "plot",
+          "options": ["Hans kissing Anna", "Anna's sacrifice for Elsa", "Kristoff saving Anna", "Elsa's powers"],
+          "correct": 1,
+          "explanation": "The act of true love was Anna sacrificing herself for Elsa, which broke the curse - love between family, not romance."
+        },
+        {
+          "id": 5,
+          "text": "Who was the real villain?",
+          "type": "character",
+          "options": ["Hans", "Elsa", "The Duke", "Olaf"],
+          "correct": 0,
+          "explanation": "Prince Hans was the villain - he tried to kill Elsa to become king and left Anna to die from the frozen heart curse."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Spirited Away",
+      "year": 2001,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was this a Studio Ghibli movie?",
+          "type": "trivia",
+          "options": ["Yes", "No", "It was Disney", "It was DreamWorks"],
+          "correct": 0,
+          "explanation": "Spirited Away was produced by Studio Ghibli and directed by Hayao Miyazaki, becoming the first non-English film to win Best Animated Feature."
+        },
+        {
+          "id": 2,
+          "text": "What was Chihiro's real name in the spirit world?",
+          "type": "plot",
+          "options": ["Sen", "Yu", "Lin", "Haku"],
+          "correct": 0,
+          "explanation": "Chihiro's name was changed to Sen by Yubaba, who takes away part of a person's name to control them and make them forget their identity."
+        },
+        {
+          "id": 3,
+          "text": "What happened to Chihiro's parents?",
+          "type": "plot",
+          "options": ["They were killed", "They were turned into pigs", "They were eaten", "They went home"],
+          "correct": 1,
+          "explanation": "Chihiro's parents ate food meant for the spirits without permission and were transformed into pigs as punishment."
+        },
+        {
+          "id": 4,
+          "text": "What was Haku's true identity?",
+          "type": "character",
+          "options": ["He was a river spirit", "He was a dragon", "He was human", "He was Yubaba's servant"],
+          "correct": 0,
+          "explanation": "Haku was a river spirit, the spirit of the Kohaku River, who forgot his identity after the river was paved over and built on."
+        },
+        {
+          "id": 5,
+          "text": "How did Chihiro save her parents?",
+          "type": "plot",
+          "options": ["She broke a spell", "She identified her parents from all the pigs", "She killed Yubaba", "She passed Yubaba's test"],
+          "correct": 1,
+          "explanation": "Chihiro had to identify her parents from all the other pigs, which she did correctly, winning their freedom and returning them to human form."
+        }
+      ]
+    }
+  ]
+}

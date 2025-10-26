@@ -1,0 +1,148 @@
+{
+  "genre": "superhero",
+  "name": "Superhero",
+  "description": "Test your knowledge of the world's mightiest heroes",
+  "movies": [
+    {
+      "id": 1,
+      "name": "The Dark Knight",
+      "year": 2008,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Heath Ledger in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Heath Ledger played the iconic role of the Joker in this movie, winning a posthumous Oscar for his performance."
+        },
+        {
+          "id": 2,
+          "text": "What was the Joker's main motivation in the movie?",
+          "type": "plot",
+          "options": ["Money", "Creating chaos", "Becoming the boss of Gotham", "Revenge for his parents"],
+          "correct": 1,
+          "explanation": "The Joker's main motivation was creating chaos and anarchy in Gotham, as he believed people only act morally when it suits them."
+        },
+        {
+          "id": 3,
+          "text": "What happened to Rachel Dawes at the end?",
+          "type": "plot",
+          "options": ["She married Harvey Dent", "She died in an explosion", "She became a villain", "She left Gotham"],
+          "correct": 1,
+          "explanation": "Rachel Dawes died in the explosion planned by the Joker, which led Harvey Dent to become Two-Face."
+        },
+        {
+          "id": 4,
+          "text": "Who directed The Dark Knight?",
+          "type": "trivia",
+          "options": ["Christopher Nolan", "Steven Spielberg", "Martin Scorsese", "Zack Snyder"],
+          "correct": 0,
+          "explanation": "Christopher Nolan directed The Dark Knight, part of his Dark Knight trilogy."
+        },
+        {
+          "id": 5,
+          "text": "What was Harvey Dent's tragic transformation?",
+          "type": "character",
+          "options": ["He became a killer", "His face was disfigured in fire", "He lost his memory", "He was brainwashed"],
+          "correct": 1,
+          "explanation": "Harvey Dent had half of his face burned by the explosion that killed Rachel, transforming him into the villain Two-Face."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Avengers: Endgame",
+      "year": 2019,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Robert Downey Jr. in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He was only in a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Robert Downey Jr. played Tony Stark/Iron Man, and this was his final movie as the character. He sacrificed himself to save the universe."
+        },
+        {
+          "id": 2,
+          "text": "How did the Avengers travel back in time?",
+          "type": "plot",
+          "options": ["Using Doctor Strange's powers", "Tony Stark invented time travel", "They used the Quantum Realm", "They used Thanos' gauntlet"],
+          "correct": 2,
+          "explanation": "Tony Stark discovered how to travel through time using the Quantum Realm and created special suits for the team."
+        },
+        {
+          "id": 3,
+          "text": "What happened to Black Widow?",
+          "type": "character",
+          "options": ["She survived", "She died to get the Soul Stone on Vormir", "She was trapped in the past", "She became the villain"],
+          "correct": 1,
+          "explanation": "Black Widow sacrificed herself on Vormir to obtain the Soul Stone, which required the ultimate sacrifice - a soul for a soul."
+        },
+        {
+          "id": 4,
+          "text": "Who snapped their fingers to end Thanos?",
+          "type": "plot",
+          "options": ["Captain America", "Hulk", "Iron Man", "Doctor Strange"],
+          "correct": 2,
+          "explanation": "Iron Man took the Infinity Stones and snapped his fingers to eliminate Thanos and his army, sacrificing his own life in the process."
+        },
+        {
+          "id": 5,
+          "text": "What year did Avengers: Endgame take place?",
+          "type": "trivia",
+          "options": ["2023", "2019", "2018", "2020"],
+          "correct": 0,
+          "explanation": "The movie takes place in 2023, five years after Thanos' snap, and the final battle marks the end of an era."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Spider-Man: Into the Spider-Verse",
+      "year": 2018,
+      "questions": [
+        {
+          "id": 1,
+          "text": "Was Shameik Moore in this movie?",
+          "type": "character",
+          "options": ["Yes", "No", "He only had a cameo", "He directed it"],
+          "correct": 0,
+          "explanation": "Shameik Moore voiced Miles Morales, the main character who becomes the Spider-Man of his universe."
+        },
+        {
+          "id": 2,
+      "text": "How many different Spider-People appear in the movie?",
+          "type": "trivia",
+          "options": ["3", "6", "4", "5"],
+          "correct": 1,
+          "explanation": "There are 6 Spider-People: Miles Morales, Peter B. Parker, Spider-Gwen, Spider-Man Noir, Spider-Ham, and Peni Parker."
+        },
+        {
+          "id": 3,
+          "text": "What happened to the original Peter Parker in Miles' universe?",
+          "type": "plot",
+          "options": ["He retired", "He was killed by Kingpin", "He was trapped in another dimension", "He became a villain"],
+          "correct": 1,
+          "explanation": "The original Peter Parker was killed by the Kingpin during a fight, leaving the city without a Spider-Man."
+        },
+        {
+          "id": 4,
+          "text": "What was Kingpin's motive?",
+          "type": "character",
+          "options": ["Take over New York", "Bring back his wife and son", "Destroy Spider-Man", "Steal technology"],
+          "correct": 1,
+          "explanation": "Kingpin wanted to use the collider to bring back his wife and son from another dimension, risking the destruction of all realities."
+        },
+        {
+          "id": 5,
+          "text": "What unique power did Miles develop?",
+          "type": "character",
+          "options": ["Super strength", "Invisibility and electric shocks", "Time travel", "Telekinesis"],
+          "correct": 1,
+          "explanation": "Miles developed the ability to turn invisible and generate electric shocks from his body, which he used to defeat Kingpin."
+        }
+      ]
+    }
+  ]
+}
