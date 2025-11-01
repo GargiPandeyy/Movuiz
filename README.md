@@ -1,8 +1,8 @@
 # Movuiz 🎬
 
-A movie quiz game.
+a movie quiz game.
 
-Pick a genre, choose a movie, and answer 5 questions about it. Get at least 50% right to unlock the next movie. Complete all 3 movies in a genre to unlock the next genre!
+pick a genre, choose a movie, and answer 5 questions about it. Get at least 50% right to unlock the next movie. complete all 3 movies in a genre to unlock the next genre!
 
 ## Scoring
 
@@ -32,4 +32,4 @@ I also struggled with event listener memory leaks until I learned the replaceWit
 
 Took helped from friends, used a little bit of ai, learned and coded a lot.
 
-[![Athena Award Badge](https:
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
